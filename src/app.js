@@ -15,11 +15,23 @@ const AddExpensePage = () => (
         Add Expense Page
     </div>
 )
+const EditExpensePage = () => (
+    <div>
+        Edit Expense Page
+    </div>
+)
+const HelpPage = () => (
+    <div>
+        Help Page
+    </div>
+)
 const routes = (
     <BrowserRouter>
         <div>
-            <Route path="/" component={ExpenseDashboardPage} />
+            <Route path="/" component={ExpenseDashboardPage} exact={true} />
             <Route path="/create" component={AddExpensePage} />
+            <Route path="/edit" component={EditExpensePage} />
+            <Route path="/help" component={HelpPage} />
         </div>
     </BrowserRouter>
 )
