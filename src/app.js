@@ -1,40 +1,23 @@
 
-import ReactDOM from 'react-dom';
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import AppRouter from './routers/AppRouter';
+import configureStore from './store/configureStore';
+import { addExpense } from './actions/expenses';
+import { setTextFilter } from './actions/filters';
+import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
-const ExpenseDashboardPage = () => (
-    <div>
-        This is from my dashboards
-    </div>
-)
-const AddExpensePage = () => (
-    <div>
-        Add Expense Page
-    </div>
-)
-const EditExpensePage = () => (
-    <div>
-        Edit Expense Page
-    </div>
-)
-const HelpPage = () => (
-    <div>
-        Help Page
-    </div>
-)
-const routes = (
-    <BrowserRouter>
-        <div>
-            <Route path="/" component={ExpenseDashboardPage} exact={true} />
-            <Route path="/create" component={AddExpensePage} />
-            <Route path="/edit" component={EditExpensePage} />
-            <Route path="/help" component={HelpPage} />
-        </div>
-    </BrowserRouter>
-)
-ReactDOM.render(routes, document.getElementById('app'))
+const store = configureStore();
+store.dispatch(addExpense({ description: 'Water bill' }));
+store.dispatch(addExpense({ description: 'Gas bill' }));
+store.dispatch(setTextFilter('water'));
+
+const state = store.getState()
+const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+console.log(visibleExpenses)
+// console.log(store.getState())
+ReactDOM.render(<AppRouter />, document.getElementById('app'))
 
 
