@@ -12,14 +12,11 @@ import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
 const store = configureStore();
+
 store.dispatch(addExpense({ description: 'Water bill', amount: 7000 }));
 store.dispatch(addExpense({ description: 'Gas bill', amount: 6600, createdAt: 1000 }));
 store.dispatch(addExpense({ description: 'Rent', amount: 60000, createdAt: 10000 }));
 store.dispatch(setTextFilter('water'));
-
-// setTimeout(() => {
-//     store.dispatch(setTextFilter('gas'))
-// }, 3000)
 
 const state = store.getState()
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
