@@ -1,8 +1,6 @@
 node_modules
 .DS_Store
 src/playground/*
-yarn-error.log
-yarn.lock
 public/bundle.js
 public/bundle.js.map
 public/style/css
