@@ -3,3 +3,7 @@ node_modules
 src/playground/*
 yarn-error.log
 yarn.lock
+public/bundle.js
+public/bundle.js.map
+public/style/css
+public/style.css.map
