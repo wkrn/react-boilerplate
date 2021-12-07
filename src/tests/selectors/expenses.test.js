@@ -56,6 +56,6 @@ test('should sort by amount', () => {
         startDate: undefined,
     }
     const result = selectExpenses(expenses, filters)
-    expect(result).toEqual([expenses[1], expenses[2], expenses[0]])
+    expect(result).toEqual([expenses[2], expenses[0], expenses[1]])
 })
 
