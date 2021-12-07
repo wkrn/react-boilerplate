@@ -1,3 +1,5 @@
 node_modules
 .DS_Store
-src/playground/**
+src/playground/*
+yarn-error.log
+yarn.lock
