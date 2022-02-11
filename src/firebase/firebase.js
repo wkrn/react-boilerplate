@@ -2,14 +2,14 @@ import * as firebase from 'firebase';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyCqCLfGoEUUQuewMMH98oY8dvgNOXLbyNk",
-    authDomain: "expensify-demo-1866b.firebaseapp.com",
-    databaseURL: "https://expensify-demo-1866b-default-rtdb.firebaseio.com",
-    projectId: "expensify-demo-1866b",
-    storageBucket: "expensify-demo-1866b.appspot.com",
-    messagingSenderId: "249251563646",
-    appId: "1:249251563646:web:177a233e744ee822d5702f",
-    measurementId: "G-Z5945J7XLP",
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    measurementId: process.env.FIREBASE_MESUREMENT_ID
 };
 
 firebase.initializeApp(firebaseConfig);
